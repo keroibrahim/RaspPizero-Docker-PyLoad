@@ -15,14 +15,14 @@ Install
 Install is easy as all docker images
 
 ```sh
-docker pull dastrasmue/rpi-pyload
+docker pull kerollos29/pyload-armv6
 ```
 
 Running
 ----
 
 ```sh
-docker run -it -d -v /root/downloads:/opt/pyload/Downloads -v /root/pyload:/opt/pyload/pyload-config --name pyload -p 8000:8000 -p 9666:9666 pyload:latest
+docker run -it -d -v /root/downloads:/opt/pyload/Downloads -v /root/pyload:/opt/pyload/pyload-config --name pyload -p 8000:8000 -p 9666:9666 kerollos29/pyload-armv6
 ```
 
 Configuration
@@ -30,22 +30,22 @@ Configuration
 You can link your Downloads to your host very easy like that:
 
 ```sh
-docker run -d -v <host directoy>:/opt/pyload/Downloads -P dastrasmue/rpi-pyload
+docker run -d -v <host directoy>:/opt/pyload/Downloads -P kerollos29/pyload-armv6
 ```
 Notice to replace ```<host directory>``` with your directory path on the host. So if you want to store your Downloads in ```/tmp/Downloads``` then your command would look like this:
 
 ```sh
-docker run -d -v /tmp/Downloads:/opt/pyload/Downloads -P dastrasmue/rpi-pyload
+docker run -d -v /tmp/Downloads:/opt/pyload/Downloads -P kerollos29/pyload-armv6
 ```
 If you want to have your configuration persistent you have to link the configuration directory outside of the container. This can happen like this:
 
 ```sh
-docker run -d -v <host directoy>:/opt/pyload/pyload-config -P dastrasmue/rpi-pyload
+docker run -d -v <host directoy>:/opt/pyload/pyload-config -P kerollos29/pyload-armv6
 ```
 
 Example, if all possible config options are used:
 ```sh
-docker run -d -p 8000:8000 -p 7227:7227 -v /opt/pyload/downloads:/opt/pyload/Downloads -v /opt/pyload/config:/opt/pyload/pyload-config --name pyload dastrasmue/rpi-pyload
+docker run -d -p 8000:8000 -p 7227:7227 -v /opt/pyload/downloads:/opt/pyload/Downloads -v /opt/pyload/config:/opt/pyload/pyload-config --name pyload kerollos29/pyload-armv6
 ```
 
 
