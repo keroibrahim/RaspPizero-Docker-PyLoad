@@ -1,8 +1,5 @@
 PyLoad for Raspberry Pi (as Dock)
 =========
-This is a fork of writl/pyload (https://github.com/obi12341/docker-pyload), which brings this Dock to the Raspberry Pi.
-It was already forked by githubato (https://github.com/githubato/dockerfile-pyload), but recent changes of writl were not included.
-
 Introduction
 ----
 pyLoad is a fast, lightweight and full featured download manager for many One-Click-Hoster, container formats like DLC, video sites or just plain http/ftp links. It aims for low hardware requirements and platform independence to be runnable on all kind of systems (desktop pc, netbook, NAS, router).
@@ -25,7 +22,7 @@ Running
 ----
 
 ```sh
-docker run -d -P dastrasmue/rpi-pyload
+docker run -it -d -v /root/downloads:/opt/pyload/Downloads -v /root/pyload:/opt/pyload/pyload-config --name pyload -p 8000:8000 -p 9666:9666 pyload:latest
 ```
 
 Configuration
